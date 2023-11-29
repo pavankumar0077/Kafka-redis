@@ -1,0 +1,16 @@
+KAFKA
+
+docker-compose up -d
+docker exec -it broker kafka-topics --create --topic test-topic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1
+docker exec -it broker kafka-console-producer --topic test-topic --bootstrap-server localhost:9092
+docker exec -it broker kafka-console-consumer --topic test-topic --from-beginning --bootstrap-server localhost:9092
+docker-compose down
+docker-compose down -v (To remove volume)
+
+REDIS CACHE
+
+docker exec -it redis redis-cli
+" docker exec -it "image/repo-name" redis-cli
+
+
+
